@@ -10,19 +10,26 @@ class NewLimitOrderMessage(BaseEventMessage):
     price_delta: float
     selling: bool
 
+class NewArbitrageSpotTradeMessage(BaseEventMessage):
+    generator_order_id: str
+    generator_order_status: str
+    generator_order_type: str
+    origin_exchange: str
+    target_exchange: str
+    origin_market: str
+    target_market: str
+    amount: float
+    usd_observed: float
+
+
 
 class NewSpotOrderMessage(BaseEventMessage):
     exchange: str
+    order_id: str
     market_code: str
     quantity: float
     usd_price: float
     selling: bool
-
-
-class CancelOrderMessage(BaseEventMessage):
-    order_id: str
-    exchange: str
-    market_code: str
 
 
 class UpdateOrderMessage(BaseEventMessage):
@@ -31,3 +38,16 @@ class UpdateOrderMessage(BaseEventMessage):
     exchange: str
     new_limit_price: float
     new_quantity: float
+
+class CancelOrderByIdMessage(BaseEventMessage):
+    order_id: str
+    exchange: str
+    market_code: str
+
+
+class CancelAllOrdersMessage(BaseEventMessage):
+    exchange: str
+
+class CancelOrdersByMarketMessage(BaseEventMessage):
+    exchange: str
+    market_code: str

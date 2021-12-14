@@ -10,3 +10,9 @@ class PriceWatchMessage(BaseEventMessage):
     ask_delta: float
     bid_price: float
     bid_delta: float
+
+class OneSidePriceWatchMessage(BaseEventMessage):
+    exchange: str
+    market_code: str
+    price: float
+    delta: float

@@ -3,4 +3,5 @@ from pydantic import BaseModel
 
 class BaseEventMessage(BaseModel):
     event: str
-    time: int
+    time: float
+    strategy_id: float
