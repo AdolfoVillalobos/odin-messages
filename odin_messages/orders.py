@@ -4,7 +4,7 @@ from odin_messages.base import BaseEventMessage
 class NewLimitOrderMessage(BaseEventMessage):
     exchange: str
     market_code: str
-    limit_price: str
+    limit_price: float
     quantity: float
     usd_price: float
     price_delta: float
