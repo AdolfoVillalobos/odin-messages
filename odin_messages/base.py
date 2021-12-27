@@ -1,4 +1,4 @@
-from typing import Array
+from typing import List
 from pydantic import BaseModel
 
 
@@ -11,4 +11,4 @@ class BaseEventMessageArray(BaseModel):
     event: str
     time: float
     strategy_id: str
-    messages: Array[BaseEventMessage]
+    messages: List[BaseEventMessage]
