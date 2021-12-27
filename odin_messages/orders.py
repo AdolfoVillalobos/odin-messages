@@ -1,6 +1,17 @@
 from odin_messages.base import BaseEventMessage
 
 
+class UpdateLimitOrderMessage(BaseEventMessage):
+    order_id: str
+    exchange: str
+    market_code: str
+    new_limit_price: float
+    new_quantity: float
+    usd_price: float
+    price_delta: float
+    selling: bool
+
+
 class NewLimitOrderMessage(BaseEventMessage):
     exchange: str
     market_code: str
