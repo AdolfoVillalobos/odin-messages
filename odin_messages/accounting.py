@@ -1,5 +1,5 @@
+from typing import List, Dict
 from pydantic import BaseModel
-from typing import List
 from  odin_messages.base import BaseEventMessage
 
 
@@ -21,3 +21,13 @@ class AccountingMessage(BaseEventMessage):
     target_market: str
     order_type: str
     usd_observed: float
+
+class OperatorBalanceMessage(BaseEventMessage):
+    balances: Dict[str, float]
+
+class OperatorManagedAmounts(BaseEventMessage):
+    managed_amounts: Dict[str, float]
+
+class OperatorMinimumToTrade(BaseEventMessage):
+    exchange: str
+    minimum_to_trade: Dict[str, float]

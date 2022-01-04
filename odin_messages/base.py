@@ -11,4 +11,5 @@ class BaseEventMessageArray(BaseModel):
     event: str
     time: float
     strategy_id: str
+    exchange: str
     messages: List[BaseEventMessage]

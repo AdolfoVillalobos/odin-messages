@@ -16,3 +16,7 @@ class OneSidePriceWatchMessage(BaseEventMessage):
     market_code: str
     price: float
     delta: float
+
+class NewUSDPriceMessage(BaseEventMessage):
+    ask: float
+    bid: float

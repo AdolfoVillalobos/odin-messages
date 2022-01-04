@@ -1,8 +1,9 @@
+from typing import List
 from odin_messages.base import BaseEventMessage
 
 
 class UpdateLimitOrderMessage(BaseEventMessage):
-    order_id: str
+    old_order_ids: List[str]
     exchange: str
     market_code: str
     new_limit_price: float
