@@ -21,6 +21,7 @@ class AccountingMessage(BaseEventMessage):
     target_market: str
     order_type: str
     usd_observed: float
+    amount: float
 
 class OperatorBalanceMessage(BaseEventMessage):
     balances: Dict[str, float]
