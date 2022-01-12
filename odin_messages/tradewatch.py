@@ -44,3 +44,9 @@ class FirstBalance(BaseEventMessage):
     exchange: str
     coins: Dict[str, CoinBalance]
 
+
+class NewTradeMessage(BaseEventMessage):
+    exchange: str
+    market_code: str
+    type: str
+    amount: str
