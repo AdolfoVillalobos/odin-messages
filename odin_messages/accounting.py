@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 from pydantic import BaseModel
 from  odin_messages.base import BaseEventMessage
 
@@ -22,6 +22,8 @@ class AccountingMessage(BaseEventMessage):
     order_type: str
     usd_observed: float
     amount: float
+    price: Optional[float]
+    quoted_amount: Optional[float]
 
 class OperatorBalanceMessage(BaseEventMessage):
     balances: Dict[str, float]

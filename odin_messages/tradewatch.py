@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Optional
 
 from odin_messages.balance import CoinBalance
 from odin_messages.base import BaseEventMessage
@@ -11,6 +11,7 @@ class NewOpenOrderMessage(BaseEventMessage):
     type: str
     selling: str
     status: str
+    limit_price: Optional[float]
 
 
 class CanceledOrderMessage(BaseEventMessage):
@@ -32,6 +33,7 @@ class OrderFilledMessage(BaseEventMessage):
     amount: float
     filled: float
     remaining: float
+    limit_price: Optional[float]
 
 
 class WalletBalanceUpdate(BaseEventMessage):
@@ -49,4 +51,7 @@ class NewTradeMessage(BaseEventMessage):
     exchange: str
     market_code: str
     type: str
-    amount: str
+    amount: float
+    percentage_of_order: Optional[float]
+    price: Optional[float]
+    quoted_amount: Optional[float]

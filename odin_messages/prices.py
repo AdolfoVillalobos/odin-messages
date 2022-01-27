@@ -18,5 +18,6 @@ class OneSidePriceWatchMessage(BaseEventMessage):
     delta: float
 
 class NewUSDPriceMessage(BaseEventMessage):
+    symbol: str
     ask: float
     bid: float
