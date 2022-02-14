@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "odin-messages"
-version = "0.3.4"
+version = "0.3.8"
 description = ""
 authors = ["adolfrodeno <amvillalobos@uc.cl>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 pydantic = "^1.8.2"
+autopep8 = "^1.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

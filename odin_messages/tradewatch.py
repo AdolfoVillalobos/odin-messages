@@ -3,11 +3,12 @@ from typing import Dict, Optional
 from odin_messages.balance import CoinBalance
 from odin_messages.base import BaseEventMessage
 
+
 class NewOpenOrderMessage(BaseEventMessage):
     exchange: str
     order_id: str
     market_code: str
-    amount: int
+    amount: float
     type: str
     selling: str
     status: str
@@ -41,6 +42,7 @@ class WalletBalanceUpdate(BaseEventMessage):
     currency_code: str
     balance: float
     used_balance: float
+
 
 class FirstBalance(BaseEventMessage):
     exchange: str

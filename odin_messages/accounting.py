@@ -28,6 +28,9 @@ class AccountingMessage(BaseEventMessage):
 class OperatorBalanceMessage(BaseEventMessage):
     balances: Dict[str, float]
 
+class OperatorExchangesBalancesMessage(BaseEventMessage):
+    balances: Dict[str, Dict[str, float]]
+
 class OperatorManagedAmounts(BaseEventMessage):
     managed_amounts: Dict[str, float]
 
