@@ -4,10 +4,16 @@ from odin_messages.base import BaseEventMessage
 
 class OperatorLoansConfigMessage(BaseEventMessage):
     loans: Dict[str, float]
+    target_exchange: str
+
 
 class OperatorMinimumToTradeMessage(BaseEventMessage):
     exchange: str
     minimum_to_trade: Dict[str, float]
+
+class OperatorMinimumLimitPriceMessage(BaseEventMessage):
+    exchange: str
+    minimum_limit_price: Dict[str, float]
 
 
 class OperatorCostConfigMessage(BaseEventMessage):

@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from odin_messages.base import BaseEventMessage
 
 
@@ -11,6 +11,7 @@ class UpdateLimitOrderMessage(BaseEventMessage):
     usd_price: float
     price_delta: float
     selling: bool
+    custom_id: Optional[str]
 
 
 class NewLimitOrderMessage(BaseEventMessage):
@@ -21,6 +22,15 @@ class NewLimitOrderMessage(BaseEventMessage):
     usd_price: float
     price_delta: float
     selling: bool
+    custom_id: Optional[str]
+
+class NewMarketOrderMessage(BaseEventMessage):
+    exchange: str
+    market_code: str
+    quantity: float
+    usd_price: float
+    selling: bool
+
 
 
 class NewArbitrageSpotTradeMessage(BaseEventMessage):
@@ -42,6 +52,7 @@ class NewSpotOrderMessage(BaseEventMessage):
     quantity: float
     usd_price: float
     selling: bool
+    custom_id: Optional[str]
 
 
 class UpdateOrderMessage(BaseEventMessage):

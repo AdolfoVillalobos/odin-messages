@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Dict
 
 from odin_messages.base import BaseEventMessage
 
@@ -21,3 +22,15 @@ class NewUSDPriceMessage(BaseEventMessage):
     symbol: str
     ask: float
     bid: float
+
+class NewPriceReferenceMessage(BaseEventMessage):
+    prices: Dict[str, float]
+
+    
+class NewPriceMinimumDeltaMessage(BaseEventMessage):
+    market_code: str
+    minimum_delta: float
+
+class NewOrderBookDephMessage(BaseEventMessage):
+    market_code:str
+    depth: float

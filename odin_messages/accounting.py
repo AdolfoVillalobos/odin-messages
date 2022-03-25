@@ -1,6 +1,6 @@
 from typing import List, Dict, Optional
 from pydantic import BaseModel
-from  odin_messages.base import BaseEventMessage
+from odin_messages.base import BaseEventMessage
 
 
 class GeneratorOrder(BaseModel):
@@ -27,6 +27,7 @@ class AccountingMessage(BaseEventMessage):
 
 class OperatorBalanceMessage(BaseEventMessage):
     balances: Dict[str, float]
+    
 
 class OperatorExchangesBalancesMessage(BaseEventMessage):
     balances: Dict[str, Dict[str, float]]
