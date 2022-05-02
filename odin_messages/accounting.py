@@ -38,3 +38,9 @@ class OperatorManagedAmounts(BaseEventMessage):
 class OperatorMinimumToTrade(BaseEventMessage):
     exchange: str
     minimum_to_trade: Dict[str, float]
+
+
+class OperatorPrice(BaseEventMessage):
+    market_code: str
+    ask: float
+    bid: float

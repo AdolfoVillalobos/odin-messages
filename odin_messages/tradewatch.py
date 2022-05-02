@@ -13,6 +13,7 @@ class NewOpenOrderMessage(BaseEventMessage):
     selling: str
     status: str
     limit_price: Optional[float]
+    custom_id: Optional[str]
 
 
 class CanceledOrderMessage(BaseEventMessage):
@@ -22,6 +23,7 @@ class CanceledOrderMessage(BaseEventMessage):
     market_code: str
     type: str
     selling: str
+    custom_id: Optional[str]
 
 
 class OrderFilledMessage(BaseEventMessage):
@@ -35,6 +37,19 @@ class OrderFilledMessage(BaseEventMessage):
     filled: float
     remaining: float
     limit_price: Optional[float]
+    custom_id: Optional[str]
+
+
+class WebsocketTradeMessage(BaseEventMessage):
+    exchange: str
+    order_id: str
+    transaction_id: str
+    market_code: str
+    type: str
+    selling: str
+    amount: float
+    limit_price: float
+    custom_id: Optional[str]
 
 
 class WalletBalanceUpdate(BaseEventMessage):
@@ -57,3 +72,4 @@ class NewTradeMessage(BaseEventMessage):
     percentage_of_order: Optional[float]
     price: Optional[float]
     quoted_amount: Optional[float]
+    custom_id: Optional[str]
