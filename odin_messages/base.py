@@ -7,6 +7,7 @@ class BaseEventMessage(BaseModel):
     time: float
     strategy_id: str
 
+
 class BaseEventMessageArray(BaseModel):
     event: str
     time: float

@@ -12,6 +12,7 @@ class UpdateLimitOrderMessage(BaseEventMessage):
     price_delta: float
     selling: bool
     custom_id: Optional[str]
+    expiration_time: Optional[float]
 
 
 class NewLimitOrderMessage(BaseEventMessage):
@@ -23,6 +24,8 @@ class NewLimitOrderMessage(BaseEventMessage):
     price_delta: float
     selling: bool
     custom_id: Optional[str]
+    expiration_time: Optional[float]
+
 
 class NewMarketOrderMessage(BaseEventMessage):
     exchange: str
@@ -30,7 +33,6 @@ class NewMarketOrderMessage(BaseEventMessage):
     quantity: float
     usd_price: float
     selling: bool
-
 
 
 class NewArbitrageSpotTradeMessage(BaseEventMessage):

@@ -49,7 +49,11 @@ class WebsocketTradeMessage(BaseEventMessage):
     selling: str
     amount: float
     limit_price: float
+    cost: Optional[float]
+    margin: Optional[float]
+    fee: Optional[float]
     custom_id: Optional[str]
+    percentage_of_order: Optional[float]
 
 
 class WalletBalanceUpdate(BaseEventMessage):
@@ -73,3 +77,8 @@ class NewTradeMessage(BaseEventMessage):
     price: Optional[float]
     quoted_amount: Optional[float]
     custom_id: Optional[str]
+
+
+class CustomIdsMapMessage(BaseEventMessage):
+    exchange: str
+    map: Dict[str, str]
